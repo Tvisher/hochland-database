@@ -385,7 +385,7 @@ html {
   gap: 40px;
   .title-text {
     color: #174075;
-    text-shadow: 10px 10px 0px #1f6f9d;
+    text-shadow: 5px 5px 0px #fff;
     // -webkit-text-stroke: 4px #ffffff; /* Толщина и цвет обводки */
     // text-stroke: 4px #ffffff; /* Толщина и цвет обводки (стандартное свойство) */
     font-family: "Coral waves";
@@ -488,6 +488,7 @@ html {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  padding: 75px 0;
 }
 
 .person-section {
@@ -495,6 +496,7 @@ html {
 }
 
 .person-section__image {
+  flex-shrink: 0;
   width: 486px;
   height: 533px;
   img {
@@ -517,11 +519,19 @@ html {
 
 .person-section__title {
   color: #174075;
-  text-shadow: #1f6f9d;
+  text-shadow: 5px 5px 0px #fff;
+  -webkit-text-stroke-width: 5;
+  -webkit-text-stroke-color: #fff;
   font-family: "Coral waves";
   font-size: 128px;
   font-style: normal;
   font-weight: 400;
+  line-height: 80px; /* 62.5% */
+  font-family: "Coral waves";
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 70%;
+  margin-bottom: 40px;
 }
 
 .person-section__position {
