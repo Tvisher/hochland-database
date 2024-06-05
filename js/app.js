@@ -53,3 +53,14 @@ $(".category__name").on("click", function () {
         // Animation complete.
     });
 });
+
+
+
+const sidebarMenu = document.querySelector('.sidebar-menu');
+
+document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.closest('.header__menu-btn') || target.closest('.sidebar-menu__close')) {
+        sidebarMenu.classList.toggle('open');
+    }
+})
