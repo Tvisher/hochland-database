@@ -20,12 +20,16 @@ gallerySliders.forEach(el => {
 document.addEventListener('click', (e) => {
     const target = e.target;
     const faqEl = target.closest('.faq__list-item')
+    let openEl = document.querySelector('.faq__list-item.show');
     if (faqEl) {
-        let openEl = document.querySelector('.faq__list-item.show');
         if (openEl && openEl != faqEl) {
             openEl.classList.remove('show');
         }
         faqEl.classList.toggle('show');
+    } else {
+        if (openEl) {
+            openEl.classList.remove('show');
+        }
     }
 
 })
@@ -57,10 +61,15 @@ $(".category__name").on("click", function () {
 
 
 const sidebarMenu = document.querySelector('.sidebar-menu');
-
+const sidebarMenuShadow = document.querySelector('.sidebar-menu__shadow');
+sidebarMenuShadow.onclick = () => {
+    sidebarMenu.classList.remove('open');
+    sidebarMenuShadow.classList.remove('open');
+}
 document.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('.header__menu-btn') || target.closest('.sidebar-menu__close')) {
         sidebarMenu.classList.toggle('open');
+        sidebarMenuShadow.classList.toggle('open');
     }
 })
